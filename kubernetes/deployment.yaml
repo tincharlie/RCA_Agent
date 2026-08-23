@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: rca-api
+
+spec:
+
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: rca-api
+
+  template:
+
+    metadata:
+      labels:
+        app: rca-api
+
+    spec:
+
+      containers:
+
+      - name: rca-api
+
+        image: rca-api:latest
+
+        ports:
+
+        - containerPort: 8000
